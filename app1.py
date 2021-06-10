@@ -2,17 +2,22 @@ from flask import Flask, jsonify
 
 app=Flask(__name__)
 
-new_student=[{
+students=[{
         'name':'Nyla Hussein',
-        'course':'Computer sceince'
+        'course':'Computer sceince',
+        'session':'Evening',
+        'Faculty':[]
+
     },
     {
         'name':'Nassiwa Nasrah',
-        'course':'Information Technology'
+        'course':'Information Technology',
+        'session':'Day' ,
+        'Faculty':[]
     }
     ]
-@app.route('/school')
-def student():
-    return jsonify({'new_student': new_student})
+@app.route('/student')
+def return_students():
+    return jsonify({'students': students})
 
 app.run()
